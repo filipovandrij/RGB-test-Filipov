@@ -33,7 +33,7 @@ app.post("/send-email", (req, res) => {
 
   const mailOptions = {
     from: "andrijfilipov73@gmail.com",
-    to: "4kafilipova@gmail.com",
+    to: "designer.web.studio.rgb@gmail.com",
     subject: "Новый пользователь",
     html: `
       <h3>Новый пользователь:</h3>
