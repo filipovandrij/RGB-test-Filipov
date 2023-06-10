@@ -4,11 +4,11 @@ import AdditionalInfo from "../../component/AdditionalInfo/AdditionalInfo";
 
 const Main = () => {
   return (
-    <>
+    <main>
       <MainInfo />
       <AddForm />
       <AdditionalInfo />
-    </>
+    </main>
   );
 };
 export default Main;

@@ -1,0 +1,14 @@
+.form {
+  height: 423px;
+  width: 288px;
+  margin: 20px 16px 0;
+  padding: 40px 21px;
+  border-radius: 9px;
+  background: #303a53;
+}
+.form h1 {
+  margin-top: 41px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+}/*# sourceMappingURL=AddForm.css.map */

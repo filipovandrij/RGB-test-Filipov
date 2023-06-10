@@ -3,6 +3,7 @@ import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import axios from "axios";
+import "./AddForm.scss";
 import * as Yup from "yup";
 
 const validationSchema = Yup.object().shape({
@@ -42,39 +43,24 @@ const AddForm = () => {
     >
       {({ errors, touched }) => (
         <Form className="form">
+          <h2>
+            Запишитесь <span className="free">бесплатно</span> <br /> и получите
+            подарок
+          </h2>
           <div className="form-group">
-            <label htmlFor="user_name" className="label">
-              Ваше имя и фамилия
-            </label>
             <Field
               type="text"
+              placeholder="Ваше имя и фамилия"
               id="user_name"
               name="user_name"
               className="input"
             />
             <ErrorMessage name="user_name" component="div" className="error" />
           </div>
-
           <div className="form-group">
-            <label htmlFor="user_mail" className="label">
-              Ваш email
-            </label>
-            <Field
-              type="text"
-              id="user_mail"
-              name="user_mail"
-              className="input"
-            />
-            <ErrorMessage name="user_mail" component="div" className="error" />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="user_phone" className="label">
-              Ваш номер телефона
-            </label>
-
             <PhoneInput
               defaultCountry="US"
+              placeholder="Ваш номер телефона"
               id="user_phone"
               name="user_phone"
               value={value}
@@ -83,9 +69,24 @@ const AddForm = () => {
             <ErrorMessage name="user_phone" component="div" className="error" />
           </div>
 
-          <button type="submit" className="button">
+          <div className="form-group">
+            <Field
+              type="text"
+              placeholder="Ваш email"
+              id="user_mail"
+              name="user_mail"
+              className="input"
+            />
+            <ErrorMessage name="user_mail" component="div" className="error" />
+          </div>
+
+          <button type="submit" className="submit_button">
             Записаться бесплатно
           </button>
+          <p className="confidentiality">
+            Нажимая на кнопку я согашаюсь <br />
+            <span className="underline">с политикой конфидециальности</span>
+          </p>
         </Form>
       )}
     </Formik>
