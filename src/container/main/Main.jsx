@@ -1,9 +1,13 @@
-import AddForm from "../../component/addForm/AddForm";
+import AddForm from "../../component/AddForm/AddForm";
+import MainInfo from "../../component/MainInfo/MainInfo";
+import AdditionalInfo from "../../component/AdditionalInfo/AdditionalInfo";
 
 const Main = () => {
   return (
     <>
-      <AddForm></AddForm>
+      <MainInfo />
+      <AddForm />
+      <AdditionalInfo />
     </>
   );
 };
