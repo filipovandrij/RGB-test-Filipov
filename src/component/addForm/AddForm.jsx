@@ -1,31 +1,29 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useState } from "react";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 import axios from "axios";
 import * as Yup from "yup";
 
 const validationSchema = Yup.object().shape({
-  title: Yup.string().required("Required"),
-  author: Yup.string().required("Required"),
-  year: Yup.number()
-    .integer("Must be an integer")
-    .min(1500, "Too old")
-    .max(new Date().getFullYear(), "Cannot be in the future")
+  user_name: Yup.string()
+    .min(2, "Too short")
+    .max(50, "Too long")
     .required("Required"),
-  rating: Yup.number()
-    .min(0, "Minimum rating is 0")
-    .max(5, "Maximum rating is 5")
-    .required("Required"),
+  user_mail: Yup.string().email("Invalid email").required("Required"),
+  user_phone: Yup.string(),
 });
 
 const initialValues = {
-  title: "",
-  author: "",
-  year: "",
-  rating: "",
+  user_name: "",
+  user_mail: "",
+  user_phone: "",
 };
 
 const AddForm = () => {
   const handleSubmit = async (values, { resetForm }) => {
     try {
+      values.user_phone = value;
       await axios.post("http://localhost:3001/send-email", values);
       console.log("Email sent successfully");
       resetForm();
@@ -34,6 +32,7 @@ const AddForm = () => {
     }
     resetForm();
   };
+  const [value, setValue] = useState();
 
   return (
     <Formik
@@ -44,39 +43,48 @@ const AddForm = () => {
       {({ errors, touched }) => (
         <Form className="form">
           <div className="form-group">
-            <label htmlFor="title" className="label">
-              Enter Product Name:
+            <label htmlFor="user_name" className="label">
+              Ваше имя и фамилия
             </label>
-            <Field type="text" id="title" name="title" className="input" />
-            <ErrorMessage name="title" component="div" className="error" />
+            <Field
+              type="text"
+              id="user_name"
+              name="user_name"
+              className="input"
+            />
+            <ErrorMessage name="user_name" component="div" className="error" />
           </div>
 
           <div className="form-group">
-            <label htmlFor="author" className="label">
-              Enter Autor:
+            <label htmlFor="user_mail" className="label">
+              Ваш email
             </label>
-            <Field type="text" id="author" name="author" className="input" />
-            <ErrorMessage name="author" component="div" className="error" />
+            <Field
+              type="text"
+              id="user_mail"
+              name="user_mail"
+              className="input"
+            />
+            <ErrorMessage name="user_mail" component="div" className="error" />
           </div>
 
           <div className="form-group">
-            <label htmlFor="year" className="label">
-              Enter Year:
+            <label htmlFor="user_phone" className="label">
+              Ваш номер телефона
             </label>
-            <Field type="number" id="year" name="year" className="input" />
-            <ErrorMessage name="year" component="div" className="error" />
-          </div>
 
-          <div className="form-group">
-            <label htmlFor="rating" className="label">
-              Enter Rating from 0 to 5:
-            </label>
-            <Field type="number" id="rating" name="rating" className="input" />
-            <ErrorMessage name="rating" component="div" className="error" />
+            <PhoneInput
+              defaultCountry="US"
+              id="user_phone"
+              name="user_phone"
+              value={value}
+              onChange={setValue}
+            />
+            <ErrorMessage name="user_phone" component="div" className="error" />
           </div>
 
           <button type="submit" className="button">
-            Add Product
+            Записаться бесплатно
           </button>
         </Form>
       )}

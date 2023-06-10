@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
   res.send("Server is running");
 });
 app.post("/send-email", (req, res) => {
-  const { title, author, year, rating } = req.body;
+  const { user_name, user_mail, user_phone } = req.body;
 
   const transporter = nodemailer.createTransport({
     service: "Gmail",
@@ -34,13 +34,12 @@ app.post("/send-email", (req, res) => {
   const mailOptions = {
     from: "andrijfilipov73@gmail.com",
     to: "4kafilipova@gmail.com",
-    subject: "New Product Added",
+    subject: "Новый пользователь",
     html: `
-      <h3>New Product Added:</h3>
-      <p>Title: ${title}</p>
-      <p>Author: ${author}</p>
-      <p>Year: ${year}</p>
-      <p>Rating: ${rating}</p>
+      <h3>Новый пользователь:</h3>
+      <p>Имя пользователя: ${user_name}</p>
+      <p>Почта пользователя: ${user_mail}</p>
+      <p>Телефон пользователя: ${user_phone}</p>
     `,
   };
 
