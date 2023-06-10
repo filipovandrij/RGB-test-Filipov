@@ -119,3 +119,29 @@
     }
   }
 }
+
+.mobile_main {
+  position: relative;
+  overflow: hidden;
+
+  .big_ellipse_mobile {
+    position: absolute;
+    z-index: -3;
+    width: 912px;
+    height: 912px;
+    left: -151px;
+    top: 430px;
+    background: #332f65;
+    filter: blur(250px);
+  }
+
+  .small_ellipse_mobile {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: -90px;
+    top: 324px;
+    background: #332f65;
+    filter: blur(250px);
+  }
+}

@@ -13,7 +13,7 @@ const Main = () => {
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Визов функції при завантаженні компонента
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -58,10 +58,12 @@ const Main = () => {
           <div className="front_end_developer">front-end developer</div>
         </main>
       ) : (
-        <main>
+        <main className="mobile_main">
           <MainInfo />
           <AddForm />
           <AdditionalInfo />
+          <div className="big_ellipse_mobile"></div>
+          <div className="small_ellipse_mobile"></div>
         </main>
       )}
     </>
