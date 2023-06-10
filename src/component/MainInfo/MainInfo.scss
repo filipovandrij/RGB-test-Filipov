@@ -1,6 +1,6 @@
 //-----mobile-first
 
-@media (max-width: 550px) {
+@media (max-width: 992px) {
   .main_info_container {
     display: flex;
     flex-direction: column;
@@ -98,7 +98,7 @@
 
 //------desktop
 
-@media (min-width: 551px) {
+@media (min-width: 993px) {
   .main_info_container {
     display: flex;
     flex-direction: column;

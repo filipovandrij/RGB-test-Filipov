@@ -1,0 +1,121 @@
+.desktop_main {
+  position: relative;
+  margin-top: 116px;
+  height: 665px;
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+
+  .main_info_container {
+    margin: 0;
+  }
+
+  .additiona_info {
+    padding: 0;
+  }
+
+  .form {
+    margin: 0;
+  }
+
+  .front_end_developer {
+    position: absolute;
+    width: 1440px;
+    bottom: -50px;
+    font-weight: 800;
+    font-size: 119px;
+    line-height: 158px;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+    color: transparent;
+    text-transform: uppercase;
+    border: 1.5px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .big_ellipse {
+    position: absolute;
+    z-index: -1;
+    width: 790px;
+    height: 793px;
+    left: 1080px;
+    bottom: 343px;
+
+    background: #332f65;
+    opacity: 0.8;
+    filter: blur(103.131px);
+    transform: rotate(9.41deg);
+  }
+  .small_ellipse {
+    position: absolute;
+    z-index: -1;
+    width: 399.01px;
+    height: 400.31px;
+    left: -31.33px;
+    bottom: 489.69px;
+    background: #332f65;
+    opacity: 0.5;
+    filter: blur(103.131px);
+    transform: rotate(9.41deg);
+  }
+
+  .absolute_logo {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .little_ellipse {
+    border-radius: 50%;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+  }
+
+  .html_logo {
+    left: 1360px;
+    top: 28px;
+    .little_ellipse {
+      width: 8px;
+      height: 8px;
+      right: 0px;
+      top: 10px;
+      background: #f16529;
+    }
+  }
+  .css_logo {
+    left: 1270px;
+    top: 145px;
+    .little_ellipse {
+      right: 5px;
+      top: -5px;
+      background: #2965f1;
+    }
+  }
+  .js_logo {
+    left: 1385px;
+    top: 230px;
+    .little_ellipse {
+      width: 8px;
+      height: 8px;
+      top: 16px;
+      right: -10px;
+      background: #f0be25;
+    }
+  }
+  .st_logo {
+    left: 1270px;
+    top: 300px;
+    .little_ellipse {
+      right: -3px;
+      top: -10px;
+      background: #ff9800;
+    }
+  }
+  .vs_code_logo {
+    left: 1360px;
+    top: 375px;
+    .little_ellipse {
+      bottom: 8px;
+      right: -10px;
+      background: #48aef3;
+    }
+  }
+}
