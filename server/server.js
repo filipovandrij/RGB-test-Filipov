@@ -20,7 +20,6 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
   res.send("Server is running");
 });
-
 app.post("/send-email", (req, res) => {
   const { title, author, year, rating } = req.body;
 
