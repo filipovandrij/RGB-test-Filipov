@@ -1,0 +1,23 @@
+.front_end_developer {
+  position: absolute;
+  bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  img {
+    margin-left: 40px;
+    animation-name: moveImg;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes moveImg {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

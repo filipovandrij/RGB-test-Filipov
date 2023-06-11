@@ -21,20 +21,31 @@
 
   .front_end_developer {
     position: absolute;
-    width: 1440px;
-    bottom: -50px;
-    font-weight: 800;
-    font-size: 119px;
-    line-height: 158px;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
-    color: transparent;
-    text-transform: uppercase;
-    border: 1.5px solid rgba(255, 255, 255, 0.05);
+    bottom: 0;
+    white-space: nowrap;
+    overflow: hidden; /* Ховаємо зайвий текст */
+
+    /* Задаємо властивості анімації */
+    animation-name: moveText;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
   .absolute_logo {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
+    &:hover img {
+      animation: vibration 0.3s infinite linear;
+    }
+    &:hover .little_ellipse {
+      animation: rotateCircle 5s infinite linear;
+    }
+    .little_ellipse {
+      right: 5px;
+      top: -5px;
+      background: #2965f1;
+    }
   }
 
   .little_ellipse {
@@ -58,12 +69,48 @@
   .css_logo {
     left: 1270px;
     top: 145px;
+
+    &:hover img {
+      animation: vibration 0.3s infinite linear;
+    }
+    &:hover .little_ellipse {
+      animation: rotateCircle 5s infinite linear;
+    }
     .little_ellipse {
       right: 5px;
       top: -5px;
       background: #2965f1;
     }
   }
+
+  @keyframes vibration {
+    0% {
+      transform: translateX(-2px) rotateZ(-1deg);
+    }
+    50% {
+      transform: translateX(2px) rotateZ(1deg);
+    }
+    100% {
+      transform: translateX(-2px) rotateZ(-1deg);
+    }
+  }
+
+  @keyframes rotateCircle {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(-110px) translateY(0px);
+    }
+    50% {
+      transform: translateX(-60px) translateY(120px);
+    }
+    75% {
+      transform: translateX(20px) translateY(110px);
+    }
+  }
+
   .js_logo {
     left: 1385px;
     top: 230px;

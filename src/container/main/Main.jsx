@@ -3,6 +3,7 @@ import MainInfo from "../../component/MainInfo/MainInfo";
 import AdditionalInfo from "../../component/AdditionalInfo/AdditionalInfo";
 import { useEffect, useState } from "react";
 import "./Main.scss";
+import RunString from "../../component/RunString/RunString";
 
 const Main = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -53,7 +54,7 @@ const Main = () => {
             />
             <div className="little_ellipse"></div>
           </div>
-          <div className="front_end_developer">front-end developer</div>
+          <RunString></RunString>
         </main>
       ) : (
         <main className="mobile_main">
