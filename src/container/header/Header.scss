@@ -1,34 +1,29 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 //-----mobile-first
 
 @media (max-width: 992px) {
   .container {
     margin: 28px 16px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexBetweenCenter();
   }
   .date {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexBetweenCenter();
     gap: 6px;
     margin-bottom: 8px;
   }
   .header_cart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(48, 46, 90, 1);
+    @include flexCenter();
+    background-color: $headerCardBG;
     height: 24px;
     gap: 4px;
     width: 88px;
-    border-radius: 5.93px;
+    border-radius: 6px;
 
     span {
-      font-weight: 600;
-      font-size: 11px;
-      line-height: 8px;
-      color: white;
+      @include fontWeightSizeHeight($weight: 600, $size: 11px, $height: 8px);
+      color: $textColor;
       padding-bottom: 2px;
     }
   }
@@ -51,22 +46,18 @@
     }
   }
   .date {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexBetweenCenter();
     gap: 18px;
     margin-bottom: 8px;
   }
 
   .header_cart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter();
     gap: 8px;
-    background-color: rgba(48, 46, 90, 1);
+    background-color: $headerCardBG;
     height: 40px;
     width: 141px;
-    border-radius: 5.93px;
+    border-radius: 6px;
 
     img {
       height: 15px;
@@ -74,10 +65,8 @@
     }
 
     span {
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 14px;
-      color: white;
+      @include fontWeightSizeHeight($weight: 600, $size: 14px, $height: 14px);
+      color: $textColor;
       padding-bottom: 2px;
     }
   }

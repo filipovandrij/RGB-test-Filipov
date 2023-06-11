@@ -1,3 +1,6 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
 //------mobile
 
 @media (max-width: 992px) {
@@ -17,9 +20,8 @@
     gap: 16px;
     h3 {
       margin: 0;
-      color: white;
-      font-weight: 700;
-      font-size: 14px;
+      color: $textColor;
+      @include fontWeightSizeHeight($weight: 700, $size: 14px, $height: 21px);
     }
   }
 
@@ -29,10 +31,8 @@
       width: 206px;
     }
     p {
-      font-weight: 400;
-      font-size: 12px;
-      color: white;
-      line-height: 18px;
+      @include fontWeightSizeHeight($weight: 400, $size: 12px, $height: 18px);
+      color: $textColor;
       width: 162px;
       margin-top: 3px;
     }
@@ -46,7 +46,7 @@
     line-height: 17px;
     text-transform: uppercase;
     span {
-      color: rgba(66, 82, 209, 1);
+      color: $highlightTextColor;
     }
   }
 }
@@ -72,9 +72,8 @@
     }
     h3 {
       margin: 0;
-      color: white;
-      font-weight: 700;
-      font-size: 13px;
+      color: $textColor;
+      @include fontWeightSizeHeight($weight: 700, $size: 13px, $height: 17px);
     }
   }
 
@@ -87,10 +86,8 @@
       width: 206px;
     }
     p {
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 19px;
-      color: white;
+      @include fontWeightSizeHeight($weight: 400, $size: 12px, $height: 19px);
+      color: $textColor;
       width: 307px;
       margin-top: 3px;
     }
@@ -104,7 +101,7 @@
     line-height: 17px;
     text-transform: uppercase;
     span {
-      color: rgba(66, 82, 209, 1);
+      color: $highlightTextColor;
     }
   }
 }

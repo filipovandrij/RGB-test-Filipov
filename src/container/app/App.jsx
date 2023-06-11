@@ -1,5 +1,5 @@
-import Main from "./container/main/Main";
-import Header from "./container/header/Header";
+import Main from "../main/Main";
+import Header from "../header/Header";
 import "./App.scss";
 
 function App() {

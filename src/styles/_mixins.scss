@@ -1,0 +1,29 @@
+@import "./variables";
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexBetweenCenter() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin fontWeightSizeHeight($weight: 600, $size: 14px, $height: 14px) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+//---vvvvvvvvvvvvvvvvvvvvvvvv---
+//---vvv-FOR-BLUR-ELLIPSE-vvv---
+//---vvvvvvvvvvvvvvvvvvvvvvvv---
+
+@mixin mainBGEllipses($blur: 103px) {
+  position: absolute;
+  z-index: -2;
+  background: $mainEllipsBG;
+  filter: blur($blur);
+}

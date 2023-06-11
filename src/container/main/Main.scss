@@ -1,6 +1,7 @@
+@import "../../styles/mixins";
+
 .desktop_main {
   position: relative;
-
   margin-top: 116px;
   height: 665px;
   display: flex;
@@ -23,9 +24,7 @@
     position: absolute;
     bottom: 0;
     white-space: nowrap;
-    overflow: hidden; /* Ховаємо зайвий текст */
-
-    /* Задаємо властивості анімації */
+    overflow: hidden;
     animation-name: moveText;
     animation-duration: 15s;
     animation-timing-function: linear;
@@ -147,24 +146,18 @@
   overflow: hidden;
 
   .big_ellipse_mobile {
-    position: absolute;
-    z-index: -3;
+    @include mainBGEllipses($blur: 250px);
     width: 912px;
     height: 912px;
     left: -151px;
     top: 430px;
-    background: #332f65;
-    filter: blur(250px);
   }
 
   .small_ellipse_mobile {
-    position: absolute;
-    z-index: -3;
+    @include mainBGEllipses($blur: 250px);
     width: 180px;
     height: 180px;
     left: -90px;
     top: 324px;
-    background: #332f65;
-    filter: blur(250px);
   }
 }

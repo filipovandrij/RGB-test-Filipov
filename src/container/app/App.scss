@@ -1,11 +1,15 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 html {
-  background-color: rgba(36, 39, 49, 1);
+  background-color: $htmlBGColor;
 }
 
 .app {
   position: relative;
   overflow: hidden;
 }
+
 @media (max-width: 992px) {
   .big_ellipse,
   .small_ellipse {
@@ -15,28 +19,22 @@ html {
 
 @media (min-width: 992px) {
   .big_ellipse {
-    position: absolute;
-    z-index: -2;
+    @include mainBGEllipses();
     width: 790px;
     height: 793px;
     left: 1080px;
     bottom: 343px;
-
-    background: #332f65;
     opacity: 0.8;
-    filter: blur(103.131px);
-    transform: rotate(9.41deg);
   }
+
   .small_ellipse {
+    @include mainBGEllipses();
     position: absolute;
     z-index: -2;
     width: 399.01px;
     height: 400.31px;
     left: -31.33px;
     bottom: 489.69px;
-    background: #332f65;
     opacity: 0.5;
-    filter: blur(103.131px);
-    transform: rotate(9.41deg);
   }
 }
