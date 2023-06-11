@@ -30,8 +30,6 @@ const Main = () => {
           <div className="right_box">
             <AddForm />
           </div>
-          <div className="big_ellipse"></div>
-          <div className="small_ellipse"></div>
           <div className="html_logo absolute_logo">
             <img src="/images/img_desktop/html_logo.svg" alt="html_logo" />
             <div className="little_ellipse"></div>

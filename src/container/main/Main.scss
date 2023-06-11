@@ -1,5 +1,6 @@
 .desktop_main {
   position: relative;
+
   margin-top: 116px;
   height: 665px;
   display: flex;
@@ -29,32 +30,6 @@
     color: transparent;
     text-transform: uppercase;
     border: 1.5px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .big_ellipse {
-    position: absolute;
-    z-index: -1;
-    width: 790px;
-    height: 793px;
-    left: 1080px;
-    bottom: 343px;
-
-    background: #332f65;
-    opacity: 0.8;
-    filter: blur(103.131px);
-    transform: rotate(9.41deg);
-  }
-  .small_ellipse {
-    position: absolute;
-    z-index: -1;
-    width: 399.01px;
-    height: 400.31px;
-    left: -31.33px;
-    bottom: 489.69px;
-    background: #332f65;
-    opacity: 0.5;
-    filter: blur(103.131px);
-    transform: rotate(9.41deg);
   }
 
   .absolute_logo {
