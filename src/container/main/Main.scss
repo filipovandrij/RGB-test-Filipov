@@ -112,6 +112,7 @@
 
   .small_ellipse_mobile {
     position: absolute;
+    z-index: -3;
     width: 180px;
     height: 180px;
     left: -90px;
