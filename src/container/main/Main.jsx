@@ -3,6 +3,7 @@ import MainInfo from "../../component/MainInfo/MainInfo";
 import AdditionalInfo from "../../component/AdditionalInfo/AdditionalInfo";
 import { useEffect, useState } from "react";
 import "./Main.scss";
+
 import RunString from "../../component/RunString/RunString";
 import LogoIcons from "../../component/LogoIcons/LogoIcons";
 
