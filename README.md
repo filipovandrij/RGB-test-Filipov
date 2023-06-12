@@ -1,6 +1,25 @@
 # У завданні використав :
 
-React.js , JavaScript, Sass , YUP, Formik , react-phone-number-input, Axios , express, nodemailer , Flex
+Мова програмування:
+-JavaScript
+
+Фреймворки:
+-Express
+
+Бібліотеки:
+-React.js
+-YUP
+-Formik
+-react-phone-number-input
+-Axios
+-react-toastify
+
+Препроцесори:
+-Sass
+
+Модулі:
+-Node.js
+-Nodemailer
 
 ## Як почати користуватись:
 

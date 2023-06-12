@@ -5,6 +5,8 @@ import PhoneInput from "react-phone-number-input";
 import axios from "axios";
 import "./AddForm.scss";
 import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const validationSchema = Yup.object().shape({
   user_name: Yup.string()
@@ -22,18 +24,26 @@ const initialValues = {
 };
 
 const AddForm = () => {
+  const [notify, setNotify] = useState();
+
+  const [value, setValue] = useState();
+
   const handleSubmit = async (values, { resetForm }) => {
     try {
       values.user_phone = value;
       await axios.post("http://localhost:3001/send-email", values);
+      setNotify(() => toast.success("Заявка оформлена!"));
       console.log("Email sent successfully");
       resetForm();
     } catch (error) {
+      setNotify(() =>
+        toast.error("Письмо не отправлено (мы скоро все исправим)")
+      );
+
       console.error("An error occurred while sending the email:", error);
     }
     resetForm();
   };
-  const [value, setValue] = useState();
 
   return (
     <Formik
@@ -80,9 +90,14 @@ const AddForm = () => {
             <ErrorMessage name="user_mail" component="div" className="error" />
           </div>
 
-          <button type="submit" className="submit_button">
+          <button
+            type="submit"
+            onClick={() => notify}
+            className="submit_button"
+          >
             Записаться бесплатно
           </button>
+          <ToastContainer theme="dark" position="top-center" />
           <p className="confidentiality">
             Нажимая на кнопку я согашаюсь <br />
             <span className="underline">с политикой конфидециальности</span>
